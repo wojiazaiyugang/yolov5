@@ -299,7 +299,7 @@ def export_coreml(model, im, file, num_boxes, num_classes, labels, conf_thres, i
     nms_model = ct.models.MLModel(nms_spec)
 
     # Assembling a pipeline model from the two models
-    input_features = [("image", ct.models.datatypes.Array(3, 300, 300)),
+    input_features = [("image", ct.models.datatypes.Array(3, opt.imgsz[0], opt.imgsz[1])),
                       ("iouThreshold", ct.models.datatypes.Double()),
                       ("confidenceThreshold", ct.models.datatypes.Double())]
 
